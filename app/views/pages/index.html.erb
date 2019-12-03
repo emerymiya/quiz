@@ -1,0 +1,27 @@
+<br />
+<div class="col-10 offset-1">
+  <h1>What's your favorite book?</h1>
+  <%= simple_form_for @page do |f| %>
+    <%= f.input :book %>
+    <%= f.input :author %>
+    <br />
+    <%= f.submit 'Add', class: 'btn btn-primary' %>
+  <% end %>
+<br />
+</div>
+<hr />
+<div class="text-center">
+  <h1>List of Favorite Books</h1>
+</div>
+<hr />
+<div class="col-10 offset-1">
+  <br />
+  <% @pages.each do |page| %>
+    <div>
+      <h1><%= page.book %></h1><br />
+      <h2>- <%= page.author %></h2><br />
+    </div>
+
+    <hr />
+  <% end %>
+</div>
